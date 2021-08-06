@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="//at.alicdn.com/t/font_2728279_ejd865d5w54.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2728279_ejd865d5w54.css">
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        position: relative;
+        background-color: #870000;
+        height: 5vh;
+        line-height: 5vh;
+        color: white;
+      }
+      .header span {
+        margin-left: 5px;
+      }
+      .rightButton {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        height: 60%;
+        width: 70px;
+        border: 1px solid white;
+        border-radius: 50px;
+        transform: translate(0, -50%);
+        text-align: center;
+        line-height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .rightButton span{
+        margin-top: 5px;
+      }
+      .content{
+        height: 25vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #870000;
+        color: white;
+      }
+      .img img{
+        height: 100px;
+      }
+      .img {
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+      }
+      .title{
+        margin-top: 15px;
+      }
+      .btns{
+        height: 63vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn{
+        height: 30px;
+        width: 70%;
+        background-color: #870000;
+        margin-top:10px;
+        margin-bottom:10px;
+        border-radius: 4px;
+        color:#fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 12px;
+      }
+      .sq{
+        height: 30px;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+      }
+      .sq .line{
+        height: 0px;
+        flex:1;
+        border:0.5px solid #870000;
+        transform:scaleY(0.1)
+      }
+      .sqtext{
+        flex:1;
+      }
+      .footer{
+        height: 7vh;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+        
+      }
+
+      .footerItem{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        font-size: 12px;
+      }
+      .footerItem .iconfont{
+        color: #870000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <span>中国矿业大学（北京）</span>
+        <div class="rightButton">
+          <div><span class="iconfont icon-weixingengduo"></span></div>
+          <div style="border: 1px solid #fff;height: 75%;"></div>
+          <div><span class="iconfont icon-weixin-tuichu-gai"></span></div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="img">
+          <img src="https://www.cumtb.edu.cn/images/logo1-20191228.png" alt="">
+        </div>
+        <div class="title"><h4>校园防控管理系统</h4></div>
+      </div>
+      <div class="btns">
+        <div class="sq"><div class="line"></div><div class="sqtext">申请</div><div class="line"></div></div>
+        <div class="btn">逸夫楼通行证(0/0次)</div>
+        <div class="btn">出校通行证(4/428次)</div>
+        <div class="btn">出校通行证(4/428次)</div>
+        <div class="btn">进出校申请</div>
+        <div class="btn">寒暑假返校申请</div>
+        <div class="btn">逸夫楼进出申请</div>
+        <div class="btn">体温上报</div>
+      </div>
+      <div class="footer">
+        <div class="footerItem"><div class="iconfont icon-index"></div><div>首页</div></div>
+        <div class="footerItem"><div class="iconfont icon-bingtu"></div><div>记录查询</div></div>
+        <div class="footerItem"><div class="iconfont icon-wode1"></div><div>我的</div></div>
+      </div>
+    </div>
+  </body>
+</html>
