@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -219,7 +218,7 @@
       }
       .realPic {
         flex: 1;
-        background: url('./zjz.png');
+        /* background: url('https://bkimg.cdn.bcebos.com/pic/0df431adcbef76094b36f1c0d094b4cc7cd98d103010?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyNzI=,g_7,xp_5,yp_5/format,f_auto'); */
         background-size: 100% 100%;
         vertical-align: center;
       }
@@ -336,10 +335,52 @@
         left: 50%;
         transform: translateX(-50%);
       }
+      .inputInfo{
+        position: fixed;
+        height: 50%;
+        width: 70%;
+        top:20%;
+        left: 50%;
+        z-index: 999;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        transform: translate(-50%,0);
+      }
+      .inputInfo input{
+        height: 40px;
+        margin: 5px 10px 5px 10px;
+      }
+      .inputInfo button{
+        height: 30px;
+        width: 50px;
+      }
+      .sname,.sid,.scollege,.surl,.submitBtn{
+        display: 1;
+      }
+      .submitBtn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content:space-around;
+      }
     </style>
   </head>
   <body>
     <div class="main">
+      <div class="inputInfo" >
+        <input type="text"  class="sname" placeholder="请输入姓名">
+        <input type="text"  class="sid" placeholder="请输入学号">
+        <input type="text" class="scollege" placeholder="请输入学院(如：管理学院)">
+        <input type="text" class="surl" placeholder="头像网址:(如：)">
+        <div class="submitBtn">
+          <button onClick="saveValue()" class="sure">确定</button>
+          <button>取消</button>
+        </div>
+
+      </div>
+
+      </div>
       <div class="header">
         <span>中国矿业大学（北京）</span>
         <div class="rightButton">
@@ -490,18 +531,22 @@
         <div class="validTime">有效期:10:00</div>
         <div class="studentInfo">
           <div class="sItem name">
-            <span>姓名</span><span class="value">伍军豪</span>
+            <span>姓名</span><span class="value nameValue"></span>
           </div>
           <div class="sItem id">
-            <span>学号/工号</span><span class="value">SQT190020232</span>
+            <span>学号/工号</span><span class="value idValue"></span>
           </div>
           <div class="sItem college">
-            <span>学院</span><span class="value">地球科学与测绘工程学院</span>
+            <span>学院</span><span class="value collegeValue"></span>
           </div>
         </div>
       </div>
     </div>
     <script>
+      let sname=""
+      let sid=""
+      let scollege=""
+      let surl=""
       function change() {
         document.getElementsByClassName('content')[0].style.display = 'none'
         document.getElementsByClassName('btns')[0].style.display = 'none'
@@ -514,6 +559,34 @@
           document.getElementsByClassName('validTime')[0].innerHTML =
             '有效期：09:' + second
         }, 999)
+      }
+      function saveValue(){
+
+        sname= document.getElementsByClassName('sname')[0].value;
+        sid= document.getElementsByClassName('sid')[0].value;
+        scollege= document.getElementsByClassName('scollege')[0].value;
+        surl= document.getElementsByClassName('surl')[0].value;
+        console.log(surl)
+
+      
+        if(surl.length==0){
+          // url= defaultUrl;
+          
+          document.getElementsByClassName('realPic')[0].style.backgroundImage="url('https://img2.baidu.com/it/u=197262149,135877137&fm=26&fmt=auto&gp=0.jpg')"
+          
+        }else{
+          url =("url('"+surl+"')")
+        document.getElementsByClassName('realPic')[0].style.backgroundImage=`${url}`
+
+        }
+        url= (surl==null)?defaultUrl:("url('"+surl+"')")
+        document.getElementsByClassName('nameValue')[0].innerHTML=sname;
+        document.getElementsByClassName('idValue')[0].innerHTML=sid;
+        document.getElementsByClassName('collegeValue')[0].innerHTML= scollege;
+        // document.getElementsByClassName('realPic')[0].style.backgroundSize
+        document.getElementsByClassName('inputInfo')[0].style.display = 'none'
+        console.log(url)
+
       }
     </script>
   </body>
