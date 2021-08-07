@@ -552,6 +552,16 @@
       let sid=""
       let scollege=""
       let surl=""
+      var date = new Date();
+
+      let year=date .getFullYear(); //获取完整的年份(4位)
+
+      let month=date .getMonth(); //获取当前月份(0-11,0代表1月)
+
+      let day=date .getDate(); //获取当前日(1-31)
+      document.getElementsByClassName('time')[0].innerHTML = year+"年"+(month+1)+"月"+day+"日";
+
+
       function change() {
         document.getElementsByClassName('content')[0].style.display = 'none'
         document.getElementsByClassName('btns')[0].style.display = 'none'
@@ -559,6 +569,9 @@
         document.getElementsByClassName('photo')[0].style.visibility = 'visible'
         document.getElementsByClassName('back')[0].style.visibility = 'visible'
         document.getElementsByClassName('bg')[0].style.visibility = 'visible'
+
+
+
         let second = 60
         let a = setInterval(() => {
           second--
